@@ -24,7 +24,7 @@ A cool and OG Tic Tac Toe game where you play against a simple(noob) bot opponen
 ## Screenshots and Demo Link
 
 <img width="1415" height="839" alt="image" src="https://github.com/user-attachments/assets/57192e06-962e-4747-b561-4d8761acef95" />
-
+DEMOOOOOOOOO == https://juny62017.github.io/TickGlow/
 ## Languages used 
 
 - HTML
