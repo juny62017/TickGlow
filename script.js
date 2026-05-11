@@ -10,6 +10,21 @@ let currentPlayer = "X";
 
 let gameRunning = true;
 
+let winningPatterns = [
+
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+
+    [0, 4, 8],
+    [2, 4, 6]
+
+];
+
 for (let i = 0; i < allBoxes.length; i++) {
 
     allBoxes[i].onclick = function () {
@@ -33,6 +48,28 @@ function playerMove(index) {
     allBoxes[index].innerText = currentPlayer;
 
     allBoxes[index].classList.add("x-style");
+
+    let playerWon = checkWinner("X");
+
+    if (playerWon === true) {
+
+        statusText.innerText = "You Won";
+
+        gameRunning = false;
+
+        return;
+    }
+
+    let drawMatch = checkDraw();
+
+    if (drawMatch === true) {
+
+        statusText.innerText = "Match Draw";
+
+        gameRunning = false;
+
+        return;
+    }
 
     statusText.innerText = "Bot Thinking...";
 
@@ -76,9 +113,73 @@ function botMove() {
 
     allBoxes[botIndex].classList.add("o-style");
 
+    let botWon = checkWinner("O");
+
+    if (botWon === true) {
+
+        statusText.innerText = "Bot Won";
+
+        gameRunning = false;
+
+        return;
+    }
+
+    let drawMatch = checkDraw();
+
+    if (drawMatch === true) {
+
+        statusText.innerText = "Match Draw";
+
+        gameRunning = false;
+
+        return;
+    }
+
     statusText.innerText = "Your Turn";
 
     enableBoard();
+}
+
+function checkWinner(player) {
+
+    for (let i = 0; i < winningPatterns.length; i++) {
+
+        let firstBox = winningPatterns[i][0];
+
+        let secondBox = winningPatterns[i][1];
+
+        let thirdBox = winningPatterns[i][2];
+
+        if (
+            board[firstBox] === player &&
+            board[secondBox] === player &&
+            board[thirdBox] === player
+        ) {
+
+            allBoxes[firstBox].style.background = "#1e3a8a";
+
+            allBoxes[secondBox].style.background = "#1e3a8a";
+
+            allBoxes[thirdBox].style.background = "#1e3a8a";
+
+            return true;
+        }
+    }
+
+    return false;
+}
+
+function checkDraw() {
+
+    for (let i = 0; i < board.length; i++) {
+
+        if (board[i] === "") {
+
+            return false;
+        }
+    }
+
+    return true;
 }
 
 function disableBoard() {
@@ -115,5 +216,6 @@ restartBtn.onclick = function () {
 
         allBoxes[i].classList.remove("o-style");
 
+        allBoxes[i].style.background = "#1e293b";
     }
 };
