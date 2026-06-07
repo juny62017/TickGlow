@@ -7,7 +7,7 @@
 
 body {
     min-height: 100vh;
-    background: linear-gradient(to bottom right, #020617, #0f172a);
+    background: #f3f1ec;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,15 +17,13 @@ body {
 .main-box {
     width: 100%;
     max-width: 430px;
-    background: rgba(17, 24, 39, 0.95);
+    background: #ffffff;
     padding: 32px;
     border-radius: 24px;
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid #e7e3da;
 
-    box-shadow:
-        0 0 30px rgba(34, 211, 238, 0.08),
-        0 0 60px rgba(59, 130, 246, 0.05);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
 }
 
 .top-section {
@@ -33,14 +31,14 @@ body {
 }
 
 h1 {
-    color: white;
+    color: #2b2b2b;
     font-size: 44px;
     letter-spacing: -1px;
     margin-bottom: 10px;
 }
 
 .game-info {
-    color: #94a3b8;
+    color: #8a857c;
     font-size: 15px;
     line-height: 24px;
 }
@@ -50,7 +48,7 @@ h1 {
 }
 
 .status-text {
-    color: #22d3ee;
+    color: #3b6ea5;
     font-size: 16px;
     font-weight: bold;
     letter-spacing: 0.5px;
@@ -64,7 +62,7 @@ h1 {
 
 .box {
     aspect-ratio: 1;
-    background: #1e293b;
+    background: #f7f5f1;
     border-radius: 18px;
     cursor: pointer;
 
@@ -77,28 +75,20 @@ h1 {
 
     transition: 0.2s;
 
-    border: 1px solid rgba(255, 255, 255, 0.04);
+    border: 1px solid #e7e3da;
 }
 
 .box:hover {
-    background: #273449;
+    background: #efece6;
     transform: scale(1.03);
 }
 
 .x-style {
-    color: #22d3ee;
-
-    text-shadow:
-        0 0 10px rgba(34, 211, 238, 0.8),
-        0 0 20px rgba(34, 211, 238, 0.4);
+    color: #3b6ea5;
 }
 
 .o-style {
-    color: #fb7185;
-
-    text-shadow:
-        0 0 10px rgba(251, 113, 133, 0.8),
-        0 0 20px rgba(251, 113, 133, 0.4);
+    color: #c0705a;
 }
 
 .bottom-section {
@@ -108,10 +98,10 @@ h1 {
 .restart-btn {
     width: 100%;
     padding: 15px;
-    border: none;
+    border: 1px solid #d8d3c9;
     border-radius: 14px;
-    background: linear-gradient(to right, #22d3ee, #3b82f6);
-    color: #0f172a;
+    background: #ffffff;
+    color: #2b2b2b;
     font-size: 15px;
     font-weight: bold;
     cursor: pointer;
@@ -120,7 +110,7 @@ h1 {
 
 .restart-btn:hover {
     transform: translateY(-2px);
-    opacity: 0.95;
+    background: #f3f1ec;
 }
 
 @media (max-width: 500px) {
